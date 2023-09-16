@@ -1,0 +1,6 @@
+.hero{
+    background-image: url(../src/assets/svg/hero_img.svg);
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+}
