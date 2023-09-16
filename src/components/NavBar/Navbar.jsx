@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import TV from '../../assets/svg/tv.svg';
 import Menu from '../../assets/svg/menu.svg';
-import Searchbar from '../SearcBar';
-// import { searchMovies } from '../../utils/SearchMovies';
+import Searchbar from '../Searchbar';
 
 const Navbar = () => {
     const [query,setQuery]=useState('');
