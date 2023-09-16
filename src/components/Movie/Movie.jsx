@@ -1,29 +1,4 @@
-// import React from 'react'
-// import RightArr from '../../assets/svg/right-arr.svg';
-
-// const Movie = () => {
-//   return (
-//     <div className='w-full h-full px-14 pt-10 bg-white'>
-//         <div className='flex items-center justify-between'>
-//           <h1 className='text-4xl font-bold text-black'>Featured Movie</h1>
-//           <div className='flex items-center gap-3 cursor-pointer text-lg text-[#BE123C] font-medium'>
-//             See More
-//             <span>
-//               <img src={RightArr} alt="right-arrow" />
-//             </span>
-//           </div>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Movie
-
-
-
 import React, { useEffect, useState } from 'react';
-// import Tomato from './PngItem_1381056 1.png'
-// import Imbd from './MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@ 1.png'
 import Tomato from '../../assets/svg/tomato.svg';
 import Imdb from '../../assets/svg/imdb.svg';
 import RightArr from '../../assets/svg/right-arr.svg';
@@ -58,7 +33,7 @@ const Movie = () => {
   }, []);
 
   return (
-    <div className='pt-[50px] px-[50px] '>
+    <div className='pt-[50px] px-8 md:px-[50px] '>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
@@ -67,7 +42,7 @@ const Movie = () => {
         <div>
           {/* <h2 className='text-2xl pb-[50px] font-bold'>Featured Movies</h2> */}
           <div className='flex items-center justify-between pb-8'>
-           <h1 className='text-4xl font-bold text-black'>Featured Movie</h1>
+           <h1 className='text-lg md:text-4xl font-bold text-black'>Featured Movie</h1>
            <div className='flex items-center gap-3 cursor-pointer text-lg text-[#BE123C] font-medium'>
              See More
              <span>
@@ -102,10 +77,9 @@ const Movie = () => {
                 <p className='text-black text-sm pl-2 '>97%</p>
               </div>
             </div>
-
             <div className='pb-5'>
               <p className='md:text-sm text-xs opacity-[0.4] font-bold'>Release Date (UTC): {movie.release_date}</p>
-              
+        
             </div>
               </div>
             ))}

@@ -44,18 +44,15 @@ const MovieDetails = () => {
   }, [id]);
 
   useEffect(() => {
-    // Update the URL when the `id` changes
-    navigate(`/movies/${id}`); // Use navigate instead of history.push
+    navigate(`/movies/${id}`); 
   }, [id, navigate]);
 
-  // Function to format movie runtime in hours and minutes
   const formatRuntime = (minutes) => {
     const hours = Math.floor(minutes / 60);
     const remainingMinutes = minutes % 60;
     return `${hours}h ${remainingMinutes}m`;
   };
 
-  // Function to format movie release date to a UTC format
   const formatReleaseDate = (dateString) => {
     const date = new Date(dateString);
     return date.toUTCString();
@@ -71,11 +68,9 @@ const MovieDetails = () => {
                 <div className="md:hidden w-full flex items-end justify-end pr-6 mb-3">
                 <i className=" fa fa-bars text-#B91C1C text-7 flex ml-auto cursor-pointer" onClick={handleSideBar}></i>
                 </div>
-            {/* Movie details */}
                 {loading ? (
                     <p className="text-xl text-center animate-ping duration-500">Loading...</p>
                 ) : (
-              // Display movie details once loading is complete
                 <div className="relative xl:w-[70rem] 2xl:w-[74.875rem] h-[28.0625rem]">
                     <div className="w-full relative ">
                       {movie.backdrop_path ?
@@ -111,15 +106,12 @@ const MovieDetails = () => {
                                 <p className=" text-[#B91C1C] p-2 lg:px-4 lg:py-0 border-2 border-solid border-[#F8E7EB] rounded-2xl text-sm">Drama</p>
                             </div>
                         </div>
-
-                        <div className="flex items-center justify-between gap-2 text-3 lg:text-4">
-                          
+                        <div className="flex items-center justify-between gap-2 text-3 lg:text-4">        
                             <img src={Star} alt="" className="w-4 md:w-6"/>
                             <p className="text-#E8E8E8">8.5</p>
                             <p> | 350k</p>
                         </div>
                     </div>
-
                     <div className="flex flex-col md:flex-row justify-between m-4 gap-2">
                         <p data-testid="movie-overview" className="w-full md:w-65% text-3.5 xl:text-[1.25rem]">{movie?.overview}</p>
 
@@ -132,7 +124,6 @@ const MovieDetails = () => {
                             <span>More watch options</span></button>
                         </div>
                     </div>
-
                     <div className="mx-4 flex flex-col md:flex-row">
                       <div className="w-full md:w-65% text-3 md:text-4.5">
                         <p className="mb-4">Director : <span className="text-#BE123C">Joseph Kosinski</span></p>
@@ -146,7 +137,6 @@ const MovieDetails = () => {
                           </select>
                         </div>
                       </div>
-
                       <div className="relative w-full md:w-35% h-50">
                         <img src={BestMovies} alt="" className="w-full h-50" />
                         <div className="absolute bottom-0 rounded-b-2 left-0 right-0 p-3 bg-[#12121280] text-white flex items-center">
@@ -158,11 +148,8 @@ const MovieDetails = () => {
                           <p className="text-3 md:text-4">The Best Movies and Shows in September</p>
                         </div>
                       </div>
-
                     </div>
-
                 </div>
-
                 )}
             </section>
         </main>

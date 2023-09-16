@@ -8,9 +8,9 @@ const Hero = () => {
   return (
     <div className='w-full min-h-screen hero'>
         <Navbar />
-        <div className='w-full flex justify-between px-[80px] py-28'>
+        <div className='w-full flex justify-between px-8 md:px-[80px] py-16 md:py-28'>
             <div>
-                <h2 className='text-7xl text-white font-bold leading-[68px]'>
+                <h2 className='text-2xl md:text-7xl text-white font-bold md:leading-[68px]'>
                     John Wick 3 : <br /> Parabellum
                 </h2>
                 <div className="flex gap-4 mt-[14px] lg:mt-[29px]">
@@ -23,7 +23,7 @@ const Hero = () => {
                         <p className="text-sm text-white">97%</p>
                     </div>
                 </div>
-                <div className='w-[26%] mt-8'>
+                <div className='w-full md:w-[26%] mt-8'>
                     <p className='text-white text-sm'>
                     John Wick is on the run after killing a member of the international assassins' guild, and with a $14 million price tag on his head, he is the target of hit men and women everywhere.
                     </p>
@@ -33,7 +33,7 @@ const Hero = () => {
                     <span className='text-white font-bold text-md'>WATCH TRAILER</span>
                 </button>
             </div>
-            <div className="flex flex-col justify-center gap-[10px] text-[12px] lg:text-base text-white">
+            <div className="hidden md:flex flex-col justify-center gap-[10px] text-[12px] lg:text-base text-white">
                 <p>1</p>
                 <p>2</p>
                 <p>3</p>

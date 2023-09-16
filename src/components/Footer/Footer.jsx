@@ -13,18 +13,18 @@ const Footer = () => {
             <img src={Twitter} alt="twitter" />
             <img src={YT} alt="youtube" />
         </div>
-        <div className='flex items gap-9 mt-8'>
-            <div className='text-[#111827] text-lg font-bold cursor-pointer'>
+        <div className='flex items gap-3 md:gap-9 mt-8'>
+            <div className='text-[#111827] text-sm md:text-lg font-bold cursor-pointer'>
                 Conditions of use
             </div>
-            <div className='text-[#111827] text-lg font-bold cursor-pointer'>
+            <div className='text-[#111827] text-sm md:text-lg font-bold cursor-pointer'>
                  Privacy & Policy
             </div>
-            <div className='text-[#111827] text-lg font-bold cursor-pointer'>
+            <div className='text-[#111827] text-sm md:text-lg font-bold cursor-pointer'>
                 Press Room
             </div>
         </div>
-        <p className='text-[#6B7280] font-bold text-lg mt-8'>
+        <p className='text-[#6B7280] font-bold text-base md:text-lg mt-8'>
         © 2021 MovieBox by Adriana Eka Prayudha  
         </p>
     </div>

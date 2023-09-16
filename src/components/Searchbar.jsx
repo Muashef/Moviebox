@@ -44,7 +44,7 @@ const Searchbar = () => {
     };
 
     return (
-        <div className="relative md:w-[32.8125rem]">
+        <div className="relative w-full md:w-[32.8125rem]">
             <form class="flex items-center w-full">
                 <label for="simple-search" class="sr-only">Search</label>
                 <div class="relative w-full">

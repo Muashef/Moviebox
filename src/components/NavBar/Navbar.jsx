@@ -22,25 +22,23 @@ const Navbar = () => {
 
 
   return (
-    <div className='w-full flex items-center justify-between px-[80px] pt-4'>
-        <div className='flex gap-5 items-center'>
-            <img src={TV} alt="tv-icon" />
-            <span className='text-2xl font-bold text-white '>MovieBox</span>
+    <div className='w-full flex items-center justify-between px-5 md:px-[80px] pt-4'>
+        <div className='flex gap-2 md:gap-5 items-center'>
+            <img src={TV} alt="tv-icon" className='object-cover' />
+            <span className='hidden md:flex text-sm md:text-2xl font-bold text-white '>MovieBox</span>
         </div>
        <div>
         <Searchbar />
-       </div>
-
-        
+       </div>     
         <div className='flex items-center gap-3'>
-                    <p className='text-white text-base font-bold'>Sign In</p>
-                    <span>
-                        <img 
-                        src={Menu} 
-                        alt="menu" 
-                        className='cursor-pointer'
-                        />
-                    </span>
+            <p className='hidden md:flex text-white text-base font-bold'>Sign In</p>
+            <span>
+              <img 
+                src={Menu} 
+                alt="menu" 
+                className='cursor-pointer'
+              />
+            </span>
         </div>
     </div>
   )
