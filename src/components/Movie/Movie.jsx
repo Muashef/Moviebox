@@ -36,7 +36,7 @@ const Movie = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const apiKey = '22e617eaf32d7796682e402089d50a48';
+    const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
     const apiUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=1`;
 
     fetch(apiUrl)
