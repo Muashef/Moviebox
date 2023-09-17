@@ -3,12 +3,23 @@ import Tomato from '../../assets/svg/tomato.svg';
 import Imdb from '../../assets/svg/imdb.svg';
 import RightArr from '../../assets/svg/right-arr.svg';
 import { Link } from 'react-router-dom'
+import FavoriteLike from '../../assets/svg/Favorite.png';
+import UnfavoriteLike from '../../assets/svg/Unfavorite.png';
 
 
 const Movie = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [favourite, setFavourite] = useState(false);
+
+  function handleFavourite() {
+    setFavourite((prevFavourite) => !prevFavourite);
+  }
+
+  const like = favourite
+    ? FavoriteLike
+    : UnfavoriteLike;
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -52,7 +63,7 @@ const Movie = () => {
          </div>
           <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {topRatedMovies.map((movie) => (
-              <div key={movie.id} className='h-full'>
+              <div key={movie.id} className='h-full relative'>
                 <Link to={`/movies/${movie.id}`}>
                 <img
                   src={`https://image.tmdb.org/t/p/original/${movie?.poster_path}`}
@@ -62,6 +73,12 @@ const Movie = () => {
                   data-testid="movie-poster"
                 />
                 </Link>
+                <img
+                  onClick={handleFavourite}
+                  src={like}
+                  alt=""
+                  className="absolute right-4 top-4 cursor-pointer"
+                />
                 <div className="mt-4">
                   <p className='text-lg text'>{movie.logo_path}</p>
                   <h3 className="text-lg text-black font-semibold" data-testid="movie-title">{movie.title}</h3>
