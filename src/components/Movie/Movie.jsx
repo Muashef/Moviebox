@@ -64,7 +64,7 @@ const Movie = () => {
                 </Link>
                 <div className="mt-4">
                   <p className='text-lg text'>{movie.logo_path}</p>
-                  <h3 className="text-lg text-black font-semibold">{movie.title}</h3>
+                  <h3 className="text-lg text-black font-semibold" data-testid="movie-title">{movie.title}</h3>
                 </div>
                 <div className='flex items-center gap-6 pb-4 pt-4'>
               <div className='flex'>
@@ -78,7 +78,7 @@ const Movie = () => {
               </div>
             </div>
             <div className='pb-5'>
-              <p className='md:text-sm text-xs opacity-[0.4] font-bold'>Release Date (UTC): {movie.release_date}</p>
+              <p className='md:text-sm text-xs opacity-[0.4] font-bold' data-testid="movie-release-date">{movie.release_date}</p>
         
             </div>
               </div>
