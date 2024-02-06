@@ -7,7 +7,7 @@ import YT from '../../assets/svg/youtube.svg'
 const Footer = () => {
   return (
     <div className='w-full flex flex-col items-center justify-center mt-28 mb-10'>
-        <div className='flex items-center gap-8'>
+        <div className='flex items-center gap-8 cursor-pointer'>
             <img src={FB} alt="facebook" />
             <img src={IG} alt="instagram" />
             <img src={Twitter} alt="twitter" />
@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
         </div>
         <p className='text-[#6B7280] font-bold text-base md:text-lg mt-8'>
-        © 2021 MovieBox by Adriana Eka Prayudha  
+        © 2021 MovieBox by Muashef 
         </p>
     </div>
   )

@@ -11,15 +11,14 @@ const Movie = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [favourite, setFavourite] = useState(false);
 
-  function handleFavourite() {
-    setFavourite((prevFavourite) => !prevFavourite);
-  }
-
-  const like = favourite
-    ? FavoriteLike
-    : UnfavoriteLike;
+    const handleFavourite = (id) => {
+      setTopRatedMovies((prevMovies) =>
+        prevMovies.map((movie) =>
+          movie.id === id ? { ...movie, favorite: !movie.favorite } : movie
+        )
+      );
+    };
 
   useEffect(() => {
     const apiKey = import.meta.env.VITE_REACT_APP_API_KEY;
@@ -51,7 +50,6 @@ const Movie = () => {
         <p>Error: {error}</p>
       ) : (
         <div>
-          {/* <h2 className='text-2xl pb-[50px] font-bold'>Featured Movies</h2> */}
           <div className='flex items-center justify-between pb-8'>
            <h1 className='text-lg md:text-4xl font-bold text-black'>Featured Movie</h1>
            <div className='flex items-center gap-3 cursor-pointer text-lg text-[#BE123C] font-medium'>
@@ -74,8 +72,8 @@ const Movie = () => {
                 />
                 </Link>
                 <img
-                  onClick={handleFavourite}
-                  src={like}
+                  onClick={() => handleFavourite(movie.id)}
+                  src={movie.favorite ? FavoriteLike : UnfavoriteLike}
                   alt=""
                   className="absolute right-4 top-4 cursor-pointer"
                 />
@@ -84,20 +82,19 @@ const Movie = () => {
                   <h3 className="text-lg text-black font-semibold" data-testid="movie-title">{movie.title}</h3>
                 </div>
                 <div className='flex items-center gap-6 pb-4 pt-4'>
-              <div className='flex'>
-                <img src={Imdb} alt="" />
-                <p className='text-black text-sm pl-2 '>{movie.popularity}</p>
-              </div>
+                  <div className='flex'>
+                    <img src={Imdb} alt="" />
+                    <p className='text-black text-sm pl-2 '>{movie.popularity}</p>
+                  </div>
 
-              <div className='flex items-center'>
-                <img src={Tomato} alt="" />
-                <p className='text-black text-sm pl-2 '>97%</p>
-              </div>
-            </div>
-            <div className='pb-5'>
-              <p className='md:text-sm text-xs opacity-[0.4] font-bold' data-testid="movie-release-date">{movie.release_date}</p>
-        
-            </div>
+                  <div className='flex items-center'>
+                    <img src={Tomato} alt="" />
+                    <p className='text-black text-sm pl-2 '>97%</p>
+                  </div>
+                </div>
+                <div className='pb-5'>
+                  <p className='md:text-sm text-xs opacity-[0.4] font-bold' data-testid="movie-release-date">{movie.release_date}</p>
+                </div>
               </div>
             ))}
           </div>
